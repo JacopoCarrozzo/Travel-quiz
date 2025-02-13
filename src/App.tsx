@@ -97,7 +97,6 @@ function App() {
         </div>
       ) : null}
 
-
       {!loading && !gameOver &&(
       <QuestionCard
         questionNr={number + 1}
@@ -117,5 +116,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
