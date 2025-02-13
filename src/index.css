@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+ body {
+    background-image: url('/src//images/background.jpg'); /* Percorso relativo alla cartella `public/` */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  *{
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  
+  
