@@ -3,7 +3,7 @@
 @tailwind utilities;
  
  body {
-    background-image: url('/src//images/background.jpg'); /* Percorso relativo alla cartella `public/` */
+    background-image: url('/src//images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
