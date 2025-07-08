@@ -28,7 +28,7 @@ export const fetchQuizQuestions = async (
         const response = await fetch(endpoint);
 
         if (response.status === 429 && retries > 0) {
-            console.warn(`Troppe richieste! Ritento... Tentativi rimasti: ${retries - 1}`);
+            console.warn(`Too many requests! I'll try again... Attempts left: ${retries - 1}`);
             return fetchQuizQuestions(amount, difficulty, retries - 1);
         }
 
@@ -39,7 +39,7 @@ export const fetchQuizQuestions = async (
         const data = await response.json();
 
         if (!data.results || !Array.isArray(data.results)) {
-            throw new Error("Formato dati non valido!");
+            throw new Error("Invalid data format!");
         }
 
         return data.results.map((question: Question) => ({
@@ -48,7 +48,7 @@ export const fetchQuizQuestions = async (
         }));
 
     } catch (error) {
-        console.error("Errore durante il fetch:", error);
+        console.error("Error while fetching:", error);
         return [];
     }
 };
