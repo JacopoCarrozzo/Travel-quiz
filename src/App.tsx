@@ -26,14 +26,14 @@ function App() {
     setLoading(true);
     setGameOver(false);
 
-    console.log("Sto facendo una richiesta all'API...");
+    console.log("I'm making a request to the API...");
     
     const newQuestions = await fetchQuizQuestions(
       TOTAL_QUESTIONS,
       Difficulty.EASY
     );
 
-    console.log("Domande ricevute:", newQuestions.length);
+    console.log("Questions received:", newQuestions.length);
     
     setQuestions(newQuestions);
     setScore(0);
@@ -69,9 +69,9 @@ function App() {
   }
 
   const getSkillLevel = (score: number) => {
-    if (score === 10) return "Maestro/a";
-    if (score >= 8) return "Esperto/a";
-    if (score >= 4) return "Intermedio";
+    if (score === 10) return "Master";
+    if (score >= 8) return "Expert";
+    if (score >= 4) return "Intermediate";
     return "Base";
   };
   
@@ -85,8 +85,8 @@ function App() {
       </button>) : null}
       {gameOver && userAnswers.length === 0 ? (
         <div className="text-center p-5 bg-gray-200 rounded-lg shadow-md">
-        <h2 className="text-xl font-bold">Benvenuto nel Travel Quiz!</h2>
-        <p className="text-md">Metti alla prova le tue conoscenze sui viaggi e scopri quanto ne sai!</p>
+        <h2 className="text-xl font-bold">Welcome to the Travel Quiz!</h2>
+        <p className="text-md">Test your travel knowledge and find out how much you know!</p>
         </div>
       ) : null}
 
